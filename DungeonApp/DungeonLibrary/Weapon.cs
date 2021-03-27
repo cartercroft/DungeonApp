@@ -30,12 +30,27 @@ namespace DungeonLibrary
             }
         }
 
+        public Weapon()
+        {
+            MaxDamage = 5;
+            MinDamage = 3;
+            BonusHitChance = 10;
+            Name = "Bronze Shortsword";
+            IsTwoHanded = false;
+        }
+        public Weapon(int minDamage, int maxDamage, string name, int bonusHitChance, bool isTwoHanded)
+        {
+            MaxDamage = maxDamage;
+            MinDamage = minDamage;
+            Name = name;
+            BonusHitChance = bonusHitChance;
+            IsTwoHanded = isTwoHanded;
+        }
 
         public override string ToString()
         {
-            return string.Format("{0}\t{1} to {2} Damage\nBonus Hit Chance: {3}%" +
-                "\t{4}", Name, MinDamage, MaxDamage, BonusHitChance,
-                IsTwoHanded ? "Two-Handed" : "One-Handed");
+            return string.Format("{0} {1} ({2} to {3} Damage)\nBonus Hit Chance: {4}%",
+                IsTwoHanded ? "Two-Handed" : "One-Handed", Name, MinDamage, MaxDamage, BonusHitChance);
         }
     }
 }

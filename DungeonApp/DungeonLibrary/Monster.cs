@@ -41,9 +41,9 @@ namespace DungeonLibrary
 
         public override string ToString()
         {
-            return string.Format($"Enemy: {Name}\n" +
-                $"Health: {LifePoints}/{MaxLifePoints}" +
-                $"Accuracy: {HitChance}%\tDamage:{MinDamage} to {MaxDamage}\n" +
+            return string.Format($"Enemy: {Name}\n\n" +
+                $"Health: {LifePoints}/{MaxLifePoints}\n" +
+                $"Accuracy: {HitChance}%\tDamage: {MinDamage} to {MaxDamage}\n" +
                 $"Defence: {BlockChance}\n" +
                 $"Description: {Description}");
         }

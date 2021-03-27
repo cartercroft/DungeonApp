@@ -19,6 +19,7 @@ namespace DungeonLibrary
         Gnome,
         Dragonborn,
         Halfling,
-        Giant
+        Giant,
+        Reptilian
     }
 }

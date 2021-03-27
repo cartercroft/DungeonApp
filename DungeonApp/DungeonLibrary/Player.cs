@@ -26,12 +26,12 @@ namespace DungeonLibrary
         public override string ToString()
         {
             return string.Format("-=-= {0} =-=-\n"
-                + "Life: {1} to {2}\n" +
-                "Hit Chance: {3}%\n" +
-                "Weapon: \n{4}\n" +
+                + "Life: {1}/{2}\n" +
+                "Weapon: {3}\n" +
+                "Hit Chance: {4}%\n" +
                 "Block: {5}\n"
-                + "Description: {6}\n", Name, LifePoints, MaxLifePoints, HitChance,
-                EquippedWeapon, BlockChance, CharacterRace);
+                + "Description: {6}\n", Name, LifePoints, MaxLifePoints,
+                EquippedWeapon, HitChance, BlockChance, CharacterRace);
         }
 
         public override int CalcBlockChance()
