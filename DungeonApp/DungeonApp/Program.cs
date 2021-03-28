@@ -88,7 +88,8 @@ namespace DungeonApp
             {
 
                 Cactuar cac1 = new Cactuar();
-                List<Monster> monsterList = new List<Monster> { cac1 };
+                Cactuar cac2 = new Cactuar("Cactuar", 25, 25, 66, 25, 3, 9, "A very angry looking cactus...", true);
+                List<Monster> monsterList = new List<Monster> { cac1, cac2 };
 
                 Random rand = new Random();
                 int randomNum = rand.Next(monsterList.Count);
@@ -146,7 +147,9 @@ namespace DungeonApp
                         case ConsoleKey.E:
                         case ConsoleKey.X:
                             Console.WriteLine("Are you sure you want to quit? (Y/N)");
-                            exit = true;
+                            userKey = Console.ReadKey(true).Key;
+                            Console.Clear();
+                            exit = (userKey == ConsoleKey.Y);
                             break;
 
                         default:

@@ -8,16 +8,12 @@ namespace DungeonLibrary
 {
     public class Cactuar : Monster
     {
-        public bool IsMetal { get; set; }
 
         public Cactuar(string name, int lifePoints, int maxLifePoints, int hitChance,
-            int blockChance, int minDamage, int maxDamage, string description, bool isMetal) : base(name, lifePoints,
-                maxLifePoints, hitChance, blockChance, minDamage, maxDamage, description)
-        {
-            IsMetal = isMetal;
-        }
-
-        public Cactuar() //Default Cactuar
+            int blockChance, int minDamage, int maxDamage, string description, bool isBuff) : base(name, lifePoints,
+                maxLifePoints, hitChance, blockChance, minDamage, maxDamage, description, isBuff)
+        { }//FQ CTOR
+        public Cactuar() //Default CTOR
         {
             Name = "Cactuar";
             MaxLifePoints = 25;
@@ -27,14 +23,14 @@ namespace DungeonLibrary
             HitChance = 66;
             BlockChance = 25;
             Description = "A very angry looking cactus...";
-            IsMetal = false;
+            IsBuff = false;
         }
 
         public override int CalcBlockChance()
         {
             int calculatedBlockChance = BlockChance;
 
-            if(IsMetal) { calculatedBlockChance += BlockChance; }
+            if(IsBuff) { calculatedBlockChance += BlockChance; }
 
             return calculatedBlockChance;
         }

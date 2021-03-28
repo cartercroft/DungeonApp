@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Cactuar.cs" />
     <Compile Include="Character.cs" />
+    <Compile Include="Combat.cs" />
     <Compile Include="Monster.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
