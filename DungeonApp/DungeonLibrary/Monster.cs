@@ -62,5 +62,11 @@ namespace DungeonLibrary
                 $"Defence: {BlockChance}\n" +
                 $"Description: {Description}");
         }
+
+        public override int CalcDamage()
+        {
+            Random rand = new Random();
+            return rand.Next(MinDamage, MaxDamage + 1);
+        }
     }
 }

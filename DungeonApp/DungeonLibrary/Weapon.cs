@@ -34,7 +34,7 @@ namespace DungeonLibrary
         {
             MaxDamage = 5;
             MinDamage = 3;
-            BonusHitChance = 10;
+            BonusHitChance = 30;
             Name = "Bronze Shortsword";
             IsTwoHanded = false;
         }
