@@ -45,8 +45,10 @@
     <Compile Include="Character.cs" />
     <Compile Include="Combat.cs" />
     <Compile Include="Monster.cs" />
+    <Compile Include="MonsterSloth.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PsychoticHillbilly.cs" />
     <Compile Include="Race.cs" />
     <Compile Include="Weapon.cs" />
   </ItemGroup>

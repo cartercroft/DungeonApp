@@ -108,7 +108,7 @@ namespace DungeonApp
             Console.Clear();
             #endregion
 
-            Player player1 = new Player("Player 1", 70, 25, 100, 100, playerRace, playerWeapon);
+            Player player1 = new Player("Player 1", 50, 25, 100, 100, playerRace, playerWeapon);
             bool exit = false;
             do
             {
@@ -116,8 +116,12 @@ namespace DungeonApp
                 #region Monsters
                 Cactuar cac1 = new Cactuar();
                 Cactuar cac2 = new Cactuar("Cactuar", 25, 25, 66, 25, 3, 9, "A very angry looking cactus...", true);
+                MonsterSloth sloth1 = new MonsterSloth();
+                MonsterSloth sloth2 = new MonsterSloth(true);
+                PsychoticHillbilly bill1 = new PsychoticHillbilly();
+                PsychoticHillbilly bill2 = new PsychoticHillbilly(true);
                 #endregion
-                List<Monster> monsterList = new List<Monster> { cac1, cac2 };
+                List<Monster> monsterList = new List<Monster> { cac1, cac2, sloth1, sloth2, bill1, bill2 };
 
                 Random rand = new Random();
                 int randomNum = rand.Next(monsterList.Count);
@@ -152,6 +156,8 @@ namespace DungeonApp
                                 Console.ForegroundColor = ConsoleColor.Green;
                                 Console.WriteLine("\nYou killed {0}!\n", monster.Name);
                                 Console.ResetColor();
+                                Console.WriteLine("You stumble through the darkness...\n\n");
+                                System.Threading.Thread.Sleep(1234);
                                 //exit inner loop to load a new monster & room
                                 reload = true;
                                 monstersSlain++;
