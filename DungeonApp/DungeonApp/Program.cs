@@ -221,7 +221,7 @@ namespace DungeonApp
             Console.BackgroundColor = ConsoleColor.Gray;
             Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine("Game over\n");
-            Console.WriteLine("You defeated {0} monsters.", monstersSlain);
+            Console.WriteLine("You defeated {0} monster{1}.", monstersSlain, (monstersSlain == 1 ? "" : "s"));
             Console.ResetColor();
         }//end Main
 
