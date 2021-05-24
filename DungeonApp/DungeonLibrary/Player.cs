@@ -34,11 +34,6 @@ namespace DungeonLibrary
                 EquippedWeapon, HitChance, BlockChance, CharacterRace);
         }
 
-        public override int CalcBlockChance()
-        {
-            return base.CalcBlockChance() + BlockChance;
-        }
-
         public override int CalcDamage()
         {
             Random rand = new Random();

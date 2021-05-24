@@ -36,27 +36,5 @@ namespace DungeonLibrary
             Description = "It's your old friend Billy Bob! He's got an odd look in his eye.";
             IsBuff = false;
         }
-
-        public override int CalcBlockChance()
-        {
-            int calculatedBlockChance = BlockChance;
-
-            if (IsBuff) { calculatedBlockChance += BlockChance; }
-
-            return calculatedBlockChance;
-        }
-
-        public override int CalcDamage()
-        {
-            Random rand = new Random();
-            int calculatedDamage = rand.Next(MinDamage, MaxDamage + 1);
-
-            if (IsBuff)
-            {
-                calculatedDamage = calculatedDamage * 2;
-            }
-
-            return calculatedDamage;
-        }
     }
 }

@@ -37,26 +37,5 @@ namespace DungeonLibrary
             IsBuff = false;
         }
 
-        public override int CalcBlockChance()
-        {
-            int calculatedBlockChance = BlockChance;
-
-            if (IsBuff) { calculatedBlockChance += BlockChance; }
-
-            return calculatedBlockChance;
-        }
-
-        public override int CalcDamage()
-        {
-            Random rand = new Random();
-            int calculatedDamage = rand.Next(MinDamage, MaxDamage + 1);
-            
-            if(IsBuff)
-            {
-                calculatedDamage = calculatedDamage * (5 / 3);
-            }
-
-            return calculatedDamage;
-        }
     }
 }

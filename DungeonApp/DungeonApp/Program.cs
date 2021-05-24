@@ -27,10 +27,10 @@ namespace DungeonApp
             "E) Elf\n" +
             "R) Reptilian\n" +
             "Enter) Human");
-            
+
             ConsoleKey characterKey = Console.ReadKey(true).Key;
             Console.Clear();
-            
+
             Race playerRace;
             switch (characterKey)
             {
@@ -108,7 +108,7 @@ namespace DungeonApp
             Console.Clear();
             #endregion
 
-            Player player1 = new Player("Player 1", 50, 25, 100, 100, playerRace, playerWeapon);
+            Player player1 = new Player("Player 1", 80, 25, 100, 100, playerRace, playerWeapon);
             bool exit = false;
             do
             {
@@ -120,8 +120,10 @@ namespace DungeonApp
                 MonsterSloth sloth2 = new MonsterSloth(true);
                 PsychoticHillbilly bill1 = new PsychoticHillbilly();
                 PsychoticHillbilly bill2 = new PsychoticHillbilly(true);
+                Vampire vamp1 = new Vampire(true);
+                Vampire vamp2 = new Vampire();
                 #endregion
-                List<Monster> monsterList = new List<Monster> { cac1, cac2, sloth1, sloth2, bill1, bill2 };
+                List<Monster> monsterList = new List<Monster> { cac1, cac2, sloth1, sloth2, bill1, bill2, vamp1, vamp2 };
 
                 Random rand = new Random();
                 int randomNum = rand.Next(monsterList.Count);
@@ -168,7 +170,8 @@ namespace DungeonApp
                         case ConsoleKey.R:
                             Console.WriteLine("Attempting to flee...");
                             System.Threading.Thread.Sleep(1000);
-                            Console.WriteLine($"{monster.Name} strikes as you flee!");
+                            Console.WriteLine("{0}{1} strikes as you flee!",
+                                monster.IsBuff ? "Burly " : "", monster.Name);
                             Combat.DoAttack(monster, player1);
                             System.Threading.Thread.Sleep(1000);
                             Console.Clear();

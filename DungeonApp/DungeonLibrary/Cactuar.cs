@@ -25,14 +25,5 @@ namespace DungeonLibrary
             Description = "A very angry looking cactus...";
             IsBuff = false;
         }
-
-        public override int CalcBlockChance()
-        {
-            int calculatedBlockChance = BlockChance;
-
-            if(IsBuff) { calculatedBlockChance += BlockChance; }
-
-            return calculatedBlockChance;
-        }
     }
 }
